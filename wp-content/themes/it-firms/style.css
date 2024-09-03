@@ -1,0 +1,64 @@
+/*!
+Theme Name: HITECH HUB
+Theme URI: http://hitechhub.co/
+Author: Helpful Insight
+Author URI: http://hitechhub.co/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+*/
+ 
+.wrapper {
+    margin: 50px;
+}
+.form-group {
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    /* min-height: 89px; */
+    position: relative;
+    padding-bottom: 10px;
+}
+.form-group label {
+    width: 100%;
+    color: #000;
+    display: block;
+    margin-bottom: 10px;
+}
+.form-group .form-control {
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    max-width: 100%;
+}
+.form-control {
+    background: #f3f3f3;
+    padding: 15px;
+    color: #616161;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    max-width: 545px;
+    width: 100%;
+}
+
+.single-content-banner p:not(:last-child) {
+    margin: 0 0 15px;
+}
+.singgle-post-list .blog-section-title {
+    padding-bottom: 20px;
+}
+.singgle-post-list .blog-section-title h2 {
+    font-size: 28px;
+    line-height: 38px;
+    margin: 0;
+}
+.singgle-post-list .blogs-date {
+    font-size: var(--fs-16);
+}

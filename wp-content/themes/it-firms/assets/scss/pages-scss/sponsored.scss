@@ -1,0 +1,154 @@
+@import '../globle-scss/main';
+@import '../component-scss/top-banner';
+@import '../component-scss/form';
+
+.sponsore-section {
+    & .sponsore-group {
+        display: flex;
+        gap: 30px;
+        & .sponsore-badges {
+            gap: 25px;
+            flex: 0 0 auto;
+            & .nav-link {
+                padding: 12px 15px;
+                border-radius: 0px;
+                border: none;
+                font-size: var(--fs-16);
+                font-weight: var(--fw-600);
+                line-height: 36px;
+                text-align: left;
+                background-color: $theme4;
+                color: $black;
+                text-transform: capitalize;
+                &.active, &:hover{
+                    background-color: $theme1;
+                    color: $white;
+                }
+            }
+        }
+        & .sponsore-details {
+            & .sponsore-card {
+                background-color: $theme4;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                & .top-heading {
+                    & .sponsore-title {
+                        font-size: 21px;
+                        line-height: 36px;
+                    }
+                    & p {
+                        font-size: var(--fs-16);
+                        line-height: 27px;
+                        margin: 0px;
+                    }
+                    & .sub-title {
+                        padding-top: 20px;
+                        margin-top: 20px;
+                        border-top: 1px solid darken($theme4, 6.5);
+                    }
+                }
+                & .sponsore-brands {
+                    & .sponsore-logo {
+                        padding: 30px 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $white;
+                    }
+                }
+                & .form .input-box {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                }
+                & .script-card {
+                    padding: 30px;
+                    background-color: $white;
+                    & .text {
+                        font-size: var(--fs-14);
+                        font-weight: var(--fw-400);
+                        line-height: 27px;
+                        margin: 0px;
+                        word-break: break-all;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 991.98px) {
+    .sponsore-section {
+        & .sponsore-group {
+            flex-direction: column;
+            & .sponsore-badges {
+                flex-wrap: nowrap;
+                align-items: center;
+                overflow: auto hidden;
+                white-space: nowrap;
+                gap: 20px;
+                & .nav-link {
+                    line-height: 26px;
+                }
+            }
+            & .sponsore-details {
+                & .sponsore-card {
+                    padding: 20px;
+                    gap: 20px;
+                    & .top-heading {
+                        & .sponsore-title {
+                            line-height: 30px;
+                        }
+                    }
+                    & .sponsore-brands {
+                        & .sponsore-logo {
+                            padding: 30px;
+                        }
+                    }
+                    & .form .input-box {
+                        gap: 20px;
+                    }
+                    & .script-card {
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 767.98px) {
+    .sponsore-section {
+        & .sponsore-group {
+            & .sponsore-badges {
+                & .nav-link {
+                    line-height: 20px;
+                    font-size: var(--fs-14);
+                }
+            }
+            & .sponsore-details {
+                & .sponsore-card {
+                    & .top-heading {
+                        & .sponsore-title {
+                            font-size: var(--fs-18);
+                            line-height: 30px;
+                        }
+                    }
+                    & .sponsore-brands {
+                        & .sponsore-logo {
+                            padding: 30px;
+                        }
+                    }
+                    & .form .input-box {
+                        grid-template-columns: 1fr;
+                    }
+                    & .script-card {
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

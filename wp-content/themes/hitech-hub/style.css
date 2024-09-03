@@ -1,0 +1,153 @@
+/*!
+Theme Name: HITECH HUB
+Theme URI: http://hitechhub.co/
+Author: Helpful Insight
+Author URI: http://hitechhub.co/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+*/
+.wrapper {
+    margin: 50px;
+}
+.form-group {
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    /* min-height: 89px; */
+    position: relative;
+    padding-bottom: 10px;
+}
+.form-group label {
+    width: 100%;
+    color: #000;
+    display: block;
+    margin-bottom: 10px;
+}
+.form-group .form-control {
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    max-width: 100%;
+}
+.form-control {
+    background: #f3f3f3;
+    padding: 15px;
+    color: #616161;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    max-width: 545px;
+    width: 100%;
+}
+
+.single-content-banner p:not(:last-child) {
+    margin: 0 0 15px;
+}
+.singgle-post-list .blog-section-title {
+    padding-bottom: 20px;
+}
+.singgle-post-list .blog-section-title h2 {
+    font-size: 28px;
+    line-height: 38px;
+    margin: 0;
+}
+.singgle-post-list .blogs-date {
+    font-size: var(--fs-16);
+}
+/* single post  */
+.content-section.section-spacing .allcontent .item p {
+    margin: 0 0 20px;
+}
+.content-section.section-spacing .allcontent > .item h2 {
+    font-size: var(--fs-30);
+    line-height: 45px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.content-section.section-spacing .allcontent > .item h3 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.content-section.section-spacing .allcontent > .item h2:first-child {
+    margin-top: 0;
+}
+.content-section.section-spacing .allcontent > .item > ul, 
+.content-section.section-spacing .allcontent > .item > ol {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.content-section.section-spacing .allcontent > .item > ul {
+    margin-bottom: 30px;
+}
+.content-section.section-spacing .allcontent > .item > ul li {
+    position: relative;
+    padding-left: 32px;
+}
+.content-section.section-spacing .allcontent > .item > ul li::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: url('data:image/svg+xml,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.45322 0.856934L3.69131 6.61884L1.07227 3.99979" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-color: #930043;
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    top: 4px;
+}
+
+.content-section.section-spacing .allcontent > .item table {
+    margin: 30px 0;
+    width: 100%;
+}
+.content-section.section-spacing .allcontent > .item table tr th,
+.content-section.section-spacing .allcontent > .item table tr td {
+    padding: 22px;
+    font-size: var(--fs-16);
+    border-top-width: 0px;
+    border-left-width: 0px;
+    white-space: nowrap
+}
+
+.content-section.section-spacing .allcontent > .item table tr th:last-child,
+.content-section.section-spacing .allcontent > .item table tr td:last-child {
+    border-right-width: 0px
+}
+
+.content-section.section-spacing .allcontent > .item table tbody tr:first-child td {
+    line-height: 20px;
+    font-weight: var(--fw-700);
+    color: #fff;
+    background-color: #930043
+}
+.content-section.section-spacing .allcontent > .item table tbody tr:first-child td h4 {
+    color: #fff !important;
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: var(--fw-700);
+	
+}
+.content-section.section-spacing .allcontent > .item table tbody tr td {
+    font-weight: var(--fw-400);
+    line-height: 29px
+}
+
+.content-section.section-spacing .allcontent > .item table tbody tr:nth-of-type(even) td {
+    background-color: #f5f5f5
+}
+
+.content-section.section-spacing .allcontent > .item table>:not(caption)>*>* {
+    border-color: #ededed !important
+} 

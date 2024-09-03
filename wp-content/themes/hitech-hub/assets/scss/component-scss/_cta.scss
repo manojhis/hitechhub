@@ -1,0 +1,47 @@
+.cta-section {
+    background: linear-gradient(95.49deg, rgba(darken($theme1, 4), 0.8) 6.01%, rgba(darken($theme1, 20), 0.95) 94.53%), url(../images/banner-img/cta-bg.png) no-repeat center;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    padding: 80px 0px;
+    & .title {
+        font-size: 45px;
+        line-height: 66px;
+        margin-bottom: 25px;
+    }
+    & .title, & p {
+        color: $white;
+    }
+    & p {
+        margin-bottom: 40px;
+    }
+    & .btn {
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .cta-section {
+        padding: 60px 0px;
+        & .title {
+            font-size: 40px;
+            line-height: 56px;
+            margin-bottom: 25px;
+        }
+        // & p {
+        //     margin-bottom: 40px;
+        // }
+        & .btn {
+            padding: 15px 30px;
+        }
+    }
+}
+@media screen and (max-width: 575.98px) {
+    .cta-section {
+        & .title {
+            font-size: 35px;
+            line-height: 46px;
+            margin-bottom: 20px;
+        }
+    }
+}

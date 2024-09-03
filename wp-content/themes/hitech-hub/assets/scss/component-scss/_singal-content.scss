@@ -1,0 +1,206 @@
+.content-section {
+    & .allcontent {
+        row-gap: 40px;
+        display: flex;
+        flex-direction: column;
+        // & .item {
+        // }
+        & .singal-post-img {
+            margin-bottom: 20px;
+            // max-height: 230px;
+            // overflow: hidden;
+            display: flex;
+            & img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+        & .blog-title{
+            margin-bottom: 15px;
+        }
+        & .title {
+            margin-bottom: 30px;
+        }
+        & p {
+            margin-bottom: 20px;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+        ul, ol{
+            display: flex;
+            flex-direction: column;
+            gap: 15px
+        }
+        ul{
+            & li{
+                position: relative;
+                padding-left: 32px;
+                &::before{
+                    content: '';
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    position: absolute;
+                    background-image: url('data:image/svg+xml,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.45322 0.856934L3.69131 6.61884L1.07227 3.99979" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+                    background-color: $theme1;
+                    background-size: 12px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    left: 0;
+                    top: 4px;
+                }
+            }
+        }
+        & blockquote{
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+        & .read-also {
+            padding: 24px;
+            font-family: var(--font-montserrat);
+            font-size: var(--fs-20);
+            font-weight: var(--fw-600);
+            line-height: 27px;
+            border-left: 3px solid $theme1;
+            background-color: $theme4;
+            color: $theme1;
+            margin: 0px;
+        }
+        & .service-providers {
+            border-radius: 20px;
+            padding: 40px;
+            background-color: rgba($theme2, 0.06);
+            & ul{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 20px;
+                column-gap: 20px;
+                & li {
+                    padding: 0px;
+                    font-weight: var(--fw-500);
+                    & a {
+                        text-decoration: underline;
+                        color: darken($theme2, 5.8);
+                        font-weight: var(--fw-500);
+                        &:hover{
+                            color: $theme1;
+                        }
+                    }
+                    &::before{
+                        display: none;
+                    }
+                }
+            }
+        }
+        & a {
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// -------------- Onsultation Card----------
+@media screen and (min-width: 1200px) {
+    .content-section {
+        & .allcontent {
+            & .blog-title {
+                font-size: 35px;
+                line-height: 56px;
+                margin-bottom: 20px;
+            }
+            & .singal-post-img {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .content-section {
+        & .allcontent {
+            & .service-providers {
+                & ul{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            // & .item {
+            // }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-section {
+        & .allcontent {
+            & .title {
+                margin-bottom: 25px;
+            }
+            & p {
+                margin-bottom: 16px;
+            }
+            ul{
+                gap: 10px;
+                & li{
+                    padding-left: 30px;
+                    &::before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        top: 2px;
+                    }
+                }
+            }
+            & .service-providers {
+                padding: 20px 30px;
+                & ul{
+                    row-gap: 20px;
+                }
+            }
+            & .read-also {
+                font-size: var(--fs-18);
+            }
+            // & .item {
+            // }
+        }
+    }
+
+}
+@media screen and (max-width: 767px) {
+    .content-section {
+        & .allcontent {
+            row-gap: 30px;
+            & .title {
+                margin-bottom: 20px;
+            }
+            & .service-providers {
+                & ul{
+                    grid-template-columns: 1fr;
+                    row-gap: 20px;
+                }
+            }
+            & .read-also {
+                font-size: var(--fs-16);
+                line-height: 26px;
+                padding: 20px;
+            }
+            // & .item {
+            // }
+        }
+    }
+}
+@media screen and (max-width: 575px) {
+    .content-section {
+        & .allcontent {
+            & .service-providers {
+                & ul{
+                    row-gap: 14px;
+                    font-size: var(--fs-14);
+                }
+            }
+            // & .item {
+            // }
+        }
+    }
+}

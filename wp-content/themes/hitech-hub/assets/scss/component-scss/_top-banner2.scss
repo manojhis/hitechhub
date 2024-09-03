@@ -1,0 +1,51 @@
+.banner-section {
+    padding: 60px 0px;
+    background: linear-gradient(180deg, rgba(darken($theme1, 4), 0.95) 0%, darken($theme1, 20) 100%), url(../images/banner-img/hero-banner-bg.png) no-repeat center;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    &::after, &::before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+    }
+    &::before{
+        background-image: url(../images/banner-img/banner-right-shap.png);
+        background-position: right;
+        left: -30%;
+    }
+    &::after{
+        background-image: url(../images/banner-img/banner-left-shap.png);
+        background-position: left;
+        right: -30%;
+    }
+    & .banner-content {
+        & .banner-title {
+            margin-bottom: 0px;
+            font-weight: var(--fw-400);
+            color: $white;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .banner-section {
+        &::before{
+            left: -20%;
+        }
+        &::after{
+            right: -20%;
+        }
+    }
+}
+
+// ------ Resposnsive--------
+@media screen and (max-width: 1200px) {
+    .banner-section {
+        padding: 50px 0px;
+    }
+}

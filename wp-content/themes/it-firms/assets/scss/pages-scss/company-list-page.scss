@@ -1,0 +1,50 @@
+@import '../globle-scss/main';
+@import '../component-scss/top-banner';
+@import '../component-scss/company-list-card';
+@import '../component-scss/pagination';
+@import '../component-scss/singal-content';
+@import '../component-scss/accordion';
+
+
+// banner-section
+.banner-section {
+    // background: url(../images/banner-img/comapny-list-banner-bg.png) no-repeat center;
+    background: linear-gradient(180deg, rgba(darken($theme1, 4), 0.95) 0%, darken($theme1, 20) 100%), url(../images/banner-img/hero-banner-bg.png) no-repeat center;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    &::after, &::before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+    }
+    &::before{
+        background-image: url(../images/banner-img/banner-right-shap.png);
+        background-position: right;
+        left: -30%;
+    }
+    &::after{
+        background-image: url(../images/banner-img/banner-left-shap.png);
+        background-position: left;
+        right: -30%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .banner-section {
+        &::before{
+            left: -20%;
+        }
+        &::after{
+            right: -20%;
+        }
+    }
+}
+
+.paginationbar{
+    margin-top: 15px;
+}

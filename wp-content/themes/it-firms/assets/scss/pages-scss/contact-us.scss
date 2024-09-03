@@ -1,0 +1,135 @@
+@import '../globle-scss/main';
+@import '../component-scss/form';
+@import '../component-scss/section-heading';
+@import '../component-scss/latest-news';
+
+
+.contact-us {
+    background-color: $white;
+    & .contactus-card {
+        background-color: $theme4;
+        padding: 40px;
+        text-align: center;
+        & .title {
+            text-transform: capitalize;
+            margin-bottom: 14px;
+            font-weight: var(--fw-400);
+        }
+        & p{
+            margin: 0px;
+            font-size: var(--fs-18);
+            line-height: 29px;
+        }
+        & form {
+            margin-top: 30px;
+            gap: 30px;
+            & .input-box {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            & .message {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    }
+    
+& .contact-card {
+    background: linear-gradient(180deg, rgba(darken($theme1, 4), 0.8) 0%, darken($theme1, 20) 100%), url(../images/featured-contact.png) no-repeat center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & .title {
+        font-size: var(--fs-30);
+        line-height: 40px;
+        margin-bottom: 12px;
+    }
+    & .title, & p {
+        color: $white;
+    }
+    & p {
+        line-height: 25px;
+    }
+    & .contact-btn {
+        display: flex;
+        & .btn {
+            color: darken($theme1, 19.7);
+        }
+    }
+    & .contact{
+        gap: 20px;
+        margin-top: 50px;
+        & .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            transition: var(--ease-in-out);
+            background-color: $white;
+        }
+        & .contact-details {
+            font-weight: var(--fw-700);
+            & .contact-label {
+                font-family: var(--font-oswald);
+                font-size: var(--fs-14);
+                line-height: 18px;
+                letter-spacing: 0.2em;
+                margin-bottom: 3px;
+            }
+            & .contact-label, & .links{
+                color: $white;
+            }
+            & .links {
+                font-size: 19px;
+                line-height: 23px;
+                &:hover{
+                    color: $theme4;
+                }
+            }
+        }
+    }
+}
+}
+
+@media screen and (max-width: 991.98px) {
+    .contact-us {
+        & .contactus-card {
+            padding: 30px;
+            & p {
+                font-size: var(--fs-16);
+                line-height: 27px;
+            }
+        }
+        
+        & .contact-card {
+            margin-top: 40px;
+        }
+    }
+    
+}
+@media screen and (max-width: 767.98px) {
+    .contact-us {
+        & .contactus-card {
+            padding: 30px 20px;
+            & form {
+                gap: 20px;
+                & .input-box {
+                    grid-template-columns: repeat(1, 1fr);
+                    row-gap: 20px;
+                }
+            }
+        }
+        & .contact-card {
+            & .title {
+                font-size: var(--fs-26);
+                line-height: 36px;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,106 @@
+// ---------- Select 2 Design----
+.select2  {
+    width: 100% !important;
+    & .selection {
+        & .select2-selection {
+            background-color: $white;
+            border: none;
+            border-radius: 0px;
+            height: 54px;
+            border: solid 1px transparent;
+            &:focus{
+                border-color: $theme2 !important;
+            }
+            & .select2-selection__rendered {
+                font-size: var(--fs-14);
+                line-height: 16px;
+                padding: 19px 40px 19px 15px;
+                border: none;
+                resize: none;
+                border-radius: 0px;
+                color: $theme5;
+                text-align: start;
+                box-shadow: none !important;
+                height: 100%;
+                outline: none;
+            }
+            & .select2-selection__arrow {
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 18px;
+                background: url(../images/icon/down-arrow.svg) no-repeat center;
+                & b {
+                    display: none;
+                }
+            }
+        }
+    }
+    &.select2-container--open{
+        & .selection {
+            & .select2-selection {
+                & .select2-selection__arrow {
+                    transform: translateY(-50%) rotate(-180deg);
+                }
+            }
+        }
+    }
+}
+.select2 * {
+    outline: none;
+}
+
+.select2-container {
+    & .select2-dropdown {
+        background-color: $white;
+        border: none;
+        border-radius: 0px;
+        box-shadow: 0px 5px 5px 0px rgba($black, 0.15);
+        & .select2-search {
+            & input {
+                height: 40px;
+                border: 1px solid darken($theme4, 3.1);
+                outline: none;
+                font-size: var(--fs-14);
+                line-height: 25px;
+                color: $theme5;
+                padding: 10px 15px;
+            }
+        }
+        & .select2-results {
+            & ul {
+                & li {
+                    padding: 10px 15px;
+                    font-size: var(--fs-14);
+                    color: $theme5;
+                    line-height: 20px;
+                    &:hover, &.select2-results__option--highlighted{
+                        background-color: $theme1;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 575.98px) {
+    .select2  {
+        & .selection {
+            & .select2-selection {
+                height: 46px;
+                & .select2-selection__rendered {
+                    padding: 14px 40px 14px 15px;
+                }
+                & .select2-selection__arrow {
+                    width: 16px;
+                    height: 16px;
+                    right: 16px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+form {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    & p {
+        margin: 0px;
+        line-height: none;
+        & span {
+            & span {
+                font-size: var(--fs-14);
+                line-height: 20px;
+                color: $theme1;
+                font-weight: var(--fw-400);
+                margin-top: 4px;
+            }
+        }
+    }
+    & .wpcf7-response-output {
+        margin: 0px;
+        border: 1px solid $theme1;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: var(--fs-16);
+        line-height: 25px;
+        background-color: rgba($theme1, 0.1);
+        text-align: center;
+    }
+    &.sent {
+        & .wpcf7-response-output {
+        margin: 0px;
+        border: 1px solid $theme2;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: var(--fs-16);
+        line-height: 25px;
+        background-color: rgba($theme2, 0.1);
+        text-align: center;
+    }
+    }
+    & .form-control{
+        font-size: var(--fs-14);
+        line-height: 16px;
+        padding: 18px 15px;
+        border: 1px solid transparent !important;
+        resize: none;
+        border-radius: 0px;
+        color: $theme5;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        outline: none !important;
+        &:focus{
+            border-color: $theme2 !important;
+        }
+    }
+    & .error, & .common_error_message, & .error-msg, & .success-msg{
+        font-size: var(--fs-14);
+        line-height: 20px;
+        font-weight: var(--fw-500);
+        margin-top: 4px;
+    }
+    & .error, & .common_error_message, & .error-msg{
+        color: lighten($danger, 2) !important;
+    }
+    & .success-msg {
+        color: lighten( $success, 2) !important;
+    }
+    // & .success-msg {
+    //     background: rgba($success, 0.15);
+    // }
+    // & .error_message, & .success-msg{
+    //     padding: 15px 20px;
+    //     text-align: center;
+    //     margin: 0px;
+    //     display: block;
+    // }
+    // & .error_message{
+    //     background: rgba($danger, 0.15);
+    // }
+    & label {
+        font-size: var(--fs-14);
+        line-height: 16px;
+        color: $black;
+        font-weight: var(--fw-500);
+        padding-bottom: 10px;
+        margin: 0px !important;
+    }
+    & .form-group {
+        margin: 0px;
+        padding: 0px;
+        width: 100% !important;
+    }
+    & .enter-value {
+        & .input-field {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            min-width: 100%;
+            & .contact_question, & .itf_contact_question, & .company_question, & .p_question {
+                white-space: nowrap;
+                font-size: var(--fs-16);
+                line-height: 27px;
+            }
+            // contact_question
+            // p_question
+            // itf_contact_question
+        }
+    }
+}
+
+@media screen and (max-width: 1199.98px) {
+    form {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    form {
+        & .form-control{
+            padding: 14px 15px;
+        }
+    }
+}

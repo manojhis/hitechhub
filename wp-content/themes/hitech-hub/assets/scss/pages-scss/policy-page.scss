@@ -1,0 +1,44 @@
+@import '../globle-scss/main';
+@import '../component-scss/top-banner2';
+@import '../component-scss/singal-content';
+
+.page-template-privacy-policy{
+    & .content-section{
+        & .allcontent {
+            row-gap: 0px;
+            & ul{
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+// .banner-section {
+//     padding: 100px 0px;
+//     border-bottom: 7px solid $theme2;
+//     & .banner-content {
+//         padding: 0px;
+//         & .banner-title {
+//             margin: 0px;
+//         }
+//     }
+// }
+
+
+
+// @media screen and (max-width: 1200px){
+//     .banner-section {
+//         padding: 60px 0px;
+//     }
+// }
+
+// @media screen and (max-width: 991.98px) {
+//     .banner-section {
+//         padding: 60px 0px;
+//     }
+// }
+// @media screen and (max-width: 767.98px) {
+//     .banner-section {
+//         padding: 50px 0px;
+//     }
+// }

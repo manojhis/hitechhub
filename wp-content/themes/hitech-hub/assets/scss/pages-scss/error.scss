@@ -1,0 +1,66 @@
+@import '../globle-scss/main';
+
+.error-page {
+    text-align: center;
+    min-height: calc(100vh - 94px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    &::before, &::after{
+        content: '';
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: lighten($theme4, 1.5);
+        position: absolute;
+    }
+    &::before{
+        bottom: 0;
+        left: -100px;
+    }
+    &::after{
+        top: 0;
+        right: -100px;
+    }
+    &>div{
+        position: relative;
+        z-index: 2;
+    }
+    p {
+        margin: 15px 0px 25px;
+    }
+}
+
+// Responsive Css
+@media screen and (max-width: 992px) {
+    .error-page {
+        min-height: calc(100vh - 63px);
+        &::before, &::after{
+            content: '';
+            width: 150px;
+            height: 150px;
+        }
+        &::before{
+            left: -75px;
+        }
+        &::after{
+            right: -75px;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .error-page {
+        &::before, &::after{
+            content: '';
+            width: 100px;
+            height: 100px;
+        }
+        &::before{
+            left: -50px;
+        }
+        &::after{
+            right: -50px;
+        }
+    }
+}

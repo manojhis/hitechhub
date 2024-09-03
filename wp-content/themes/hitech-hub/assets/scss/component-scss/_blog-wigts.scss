@@ -1,0 +1,238 @@
+.wigts-side {
+    gap: 30px;
+    & .blog-admin-details{
+        background-color: $theme4;
+        padding: 20px;
+        & .blog-admin-item {
+            gap: 15px;
+            display: flex;
+            align-items: center;
+            &:not(:last-child){
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px dashed darken($theme4, 13.5);
+            }
+            & .icon-img {
+                width: 60px;
+                height: 60px;
+                background-color: $theme4;
+            }
+            & .content-side {
+                & .user{
+                    font-size: var(--fs-14);
+                    line-height: 20px;
+                    margin-bottom: 8px;
+                    color: $theme1;
+                    text-transform: uppercase;
+                    letter-spacing: 0.34em;
+                    font-family: var(--font-oswald);
+                }
+                & .user, & p{
+                    font-weight: var(--fw-500);
+                }
+                & p {
+                    line-height: 18px;
+                    margin: 0px;
+                }
+            }
+        }
+    }
+    & .onsultation-card {
+        padding: 20px;
+        background-color: $theme4;
+        & .title{
+            font-size: var(--fs-22);
+            line-height: 28px;
+            margin-bottom: 20px;
+            font-weight: var(--fw-500);
+        }
+    }
+    & .last-card{
+        position: sticky;
+        top: 30px;
+    }
+    & .best-firm-card {
+        padding: 20px 20px 0px;
+        background: url(../images/banner-img/best-firm-bg.png) no-repeat center;
+        background-size: cover;
+        border-radius: 0px;
+        & .sub-title {
+            margin-bottom: 6px;
+            font-weight: var(--fw-500);
+            letter-spacing: 0.11em;
+        }
+        & .firm-title {
+            font-size: 38px;
+            line-height: 48px;
+            margin-bottom: 12px;
+            font-weight: var(--fw-800);
+        }
+        & .readbtn {
+            margin-bottom: 25px;
+            & .btn {
+                padding: 10px 30px;
+            }
+        }
+        & .support-link {
+            & .contact{
+                gap: 8px;
+                margin-bottom: 24px;
+                & .icon {
+                    width: 35px;
+                    height: 35px;
+                    min-width: 35px;
+                    border-radius: 5px;
+                    background-color: $white;
+                }
+                & .icon, & .icon img {
+                    transition: var(--ease-in-out);
+                }
+                & .contact-details {
+                    font-weight: var(--fw-700);
+                    & .contact-label {
+                        font-family: var(--font-oswald);
+                        font-size: var(--fs-12);
+                        line-height: 15px;
+                        letter-spacing: 0.2em;
+                        margin-bottom: 3px;
+                    }
+                    & .links {
+                        font-size: var(--fs-20);
+                        line-height: 23px;
+                    }
+                }
+                &:hover{
+                    & .icon{
+                        background-color: $theme4;
+                    }
+                }
+            }
+        }
+    }
+    & .tag-list {
+        & li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: var(--fs-16);
+            line-height: 27px;
+            color: $black;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba($black, 0.17);
+            &:last-child{
+                border: none;
+                padding-bottom: 0px;
+            }
+            & a {
+                color: $black;
+                &:hover{
+                    color: $theme1;
+                }
+            }
+        }
+    }
+    & .support-banner {
+        padding: 25px 20px;
+        & .icon {
+            max-width: 131px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 25px;
+        }
+        & .title {
+            font-size: var(--fs-22);
+            font-weight: var(--fw-500);
+            line-height: 27px;
+            margin-bottom: 14px;
+        }
+        & p {
+            font-size: var(--fs-16);
+            line-height: 27px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+
+// --- Resposnive Css--------
+@media screen and (min-width: 1400px) {
+    .wigts-side {
+        & .best-firm-card {
+            & .firm-title {
+                font-size: 40px;
+                line-height: 50px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1199.98px) {
+    .wigts-side {
+        & .onsultation-card {
+            & .title  {
+                margin-bottom: 15px;
+            }
+        }
+        & .best-firm-card {
+            padding: 25px 20px 0px;
+            & .sub-title {
+                font-size: var(--fs-16);
+                line-height: 18px;
+            }
+            & .firm-title {
+                font-size: 40px;
+                line-height: 50px;
+                margin-bottom: 16px;
+            }
+            & .readbtn {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
+    .wigts-side {
+        & .best-firm-card {
+            & .support-link {
+                position: relative;
+                & .contact  {
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+@media screen  and (max-width: 991.98px) {
+    .wigts-side {
+        margin-top: 50px;
+        & .best-firm-card {
+            & .support-link {
+                & .firm-user {
+                    & img{
+                        max-width: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen  and (max-width: 767.98px) {
+    .wigts-side {
+        & .support-banner {
+            & .icon {
+                max-width: 100px;
+            }
+        }
+    }
+}
+@media screen  and (max-width: 575.98px) {
+    .wigts-side {
+        // gap: 20px;
+        & .best-firm-card {
+            & .firm-title {
+                font-size: 35px;
+                line-height: 45px;
+                margin-bottom: 14px;
+            }
+        }
+    }
+}

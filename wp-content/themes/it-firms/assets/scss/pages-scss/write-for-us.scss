@@ -1,0 +1,127 @@
+@import '../globle-scss/main';
+@import '../component-scss/top-banner';
+@import '../component-scss/singal-content';
+@import '../component-scss/blog-wigts';
+// @import '../component-scss/form';
+
+.content-section {
+    padding: 60px 0px 100px;
+}
+
+.write-us {
+    & .wigts-side{
+        & .support-banner{
+            & .title {
+                margin-bottom: 35px;
+            }
+            & p {
+                margin-bottom: 8px;
+                font-size: var(--fs-14);
+                color: $black;
+                line-height: 17px;
+            }
+            & .link{
+                font-size: var(--fs-22);
+                font-weight: var(--fw-700);
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+.contact-to-mail{
+    background-color: $theme4;
+    padding: 24px 60px 24px 20px;
+    display: flex;
+    align-items: center;
+    & .left-side {
+        display: flex;
+        align-items: center;
+        gap: 37px;
+        padding-right: 55px;
+        border-right: 1px solid darken($theme4, 12.5);
+        & .icon {
+            width: 110px;
+            flex: 0 0 auto;
+        }
+        & .contact-title{
+            margin: 0px !important;
+            font-size: var(--fs-20);
+            line-height: 31px;
+        }
+    }
+    & .right-side {
+        padding-left: 55px;
+        & .send-articale-title {
+            font-size: var(--fs-14);
+            line-height: 17px;
+            margin-bottom: 8px;
+        }
+        & a {
+            font-size: var(--fs-22);
+            line-height: 27px;
+            font-weight: var(--fw-700);
+        }
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .write-us {
+        & .wigts-side{
+            & .support-banner{
+                & .link{
+                    font-size: var(--fs-20);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+    .content-section {
+        padding: 60px 0px 80px;
+    }
+    .contact-to-mail{
+        padding: 24px 20px;
+        & .left-side {
+            gap: 20px;
+            padding-right: 30px;
+            & .icon {
+                width: 80px;
+            }
+            & .contact-title{
+                font-size: var(--fs-18);
+                line-height: 29px;
+            }
+        }
+        & .right-side {
+            padding-left: 30px;
+            & a {
+                font-size: var(--fs-20);
+                line-height: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .content-section {
+        padding: 50px 0px 60px;
+    }
+}
+@media screen and (max-width: 767.98px) {
+    .content-section {
+        padding: 50px 0px;
+    }
+    .contact-to-mail{
+        flex-direction: column;
+        & .left-side {
+            padding: 0px 0px 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid darken($theme4, 12.5);
+            border-right: none;
+        }
+        & .right-side {
+            padding-left: 0px;
+        }
+    }
+}

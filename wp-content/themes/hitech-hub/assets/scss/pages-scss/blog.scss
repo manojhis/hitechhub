@@ -1,0 +1,22 @@
+@import '../globle-scss/main';
+@import '../component-scss/top-banner';
+@import '../component-scss/blog-card';
+@import '../component-scss/pagination';
+@import '../component-scss/blog-wigts';
+@import '../component-scss/form';
+
+
+@media screen and (max-width: 1200px) {
+.blog-page {
+    & .blogs {
+        & .blog-item {
+            & .blog-body {
+                & .blog-img {
+                    max-width: 100%;
+                    max-height: initial;
+                }
+            }
+        }
+    }
+}
+}

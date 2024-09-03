@@ -1,0 +1,118 @@
+@import '../globle-scss/main';
+@import '../component-scss/top-banner';
+@import '../component-scss/company-list-card';
+@import '../component-scss/pagination';
+@import '../component-scss/singal-content';
+@import '../component-scss/accordion';
+
+.sec_top_header {
+    position: absolute;
+    z-index: 1;
+    background-color: #fafafa;
+    box-shadow: 0 4px 4px rgba($black, 0.05);
+    left: 0;
+    min-width: -webkit-fill-available !important;
+    width: 100%;
+    display: none;
+    z-index: 11;
+    & .sec_top_text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 40px;
+        & .sec_top_tilte {
+            font-size: var(--fs-18);
+            line-height: 30px;
+            font-weight: var(--fw-500);
+            text-transform: uppercase;
+        }
+        & .sec_top_link {
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    }
+    &.is-sticky {
+        position: fixed;
+        padding: 15px 0;
+        display: block;
+        top: 0;
+        animation: slideDown .35s ease-out;
+    }      
+}
+
+      
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+// banner-section
+.banner-section {
+    // background: url(../images/banner-img/comapny-list-banner-bg.png) no-repeat center;
+    background: linear-gradient(180deg, rgba(darken($theme1, 4), 0.95) 0%, darken($theme1, 20) 100%), url(../images/banner-img/hero-banner-bg.png) no-repeat center;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    &::after, &::before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+    }
+    &::before{
+        background-image: url(../images/banner-img/banner-right-shap.png);
+        background-position: right;
+        left: -30%;
+    }
+    &::after{
+        background-image: url(../images/banner-img/banner-left-shap.png);
+        background-position: left;
+        right: -30%;
+    }
+    &.banner-content{
+        max-width: 690px;
+    }
+    & .comapny-list-img{
+        & img{
+            max-width: 252px;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .sec_top_header {
+        & .sec_top_text {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            flex-direction: column;
+            & .sec_top_tilte {
+                border-bottom: 1px solid #e7e7e7;
+                margin-bottom: 10px;
+                padding-bottom: 10px;;
+            }
+            & > *{
+                width: 100%;
+                
+            }
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .banner-section {
+        &::before{
+            left: -20%;
+        }
+        &::after{
+            right: -20%;
+        }
+    }
+}
+
+.paginationbar{
+    margin-top: 15px;
+}

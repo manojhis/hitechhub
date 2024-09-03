@@ -1,0 +1,145 @@
+.development-card-group {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    & .development-card {
+        width: 100%;
+        &:not(:last-child){
+            flex: 0 0 auto;
+            width: calc(50% - 15px);
+        }
+        & .development-card-header {
+            padding: 25px 25px 25px 143px;
+            background-color: $theme4;
+            position: relative;
+            height: 85px;
+            &::before, &::after{
+                content: '';
+                width: 143px;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            &::after{
+                background-color: $theme4;
+                clip-path: polygon(100% 0, 74% 100%, 100% 100%);
+            }
+            &::before{
+                background-color: $theme1;
+            }
+            & .icon {
+                position: absolute;
+                left: 25px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 50px;
+                height: 50px;
+            }
+            & .title {
+                padding-left: 25px;
+                margin: 0px;
+                font-weight: var(--fw-400);
+            }
+        }
+        & .development-card-body {
+            height: calc(100% - 85px);
+            padding: 30px 20px;
+            border: 1px solid darken($theme4, 3.1);
+            & .categories-item {
+                &:not(:last-child){
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid darken($theme4, 3.1);
+                }
+                & .categories-title {
+                    font-size: var(--fs-16);
+                    line-height: 30px;
+                    letter-spacing: 0.25em;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                    font-weight: var(--fw-400);
+                    color: $theme1;
+                }
+                & .categories-list {
+                    gap: 14px;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    & li {
+                        & a, & span {
+                            padding: 4px 14px;
+                            border-radius: 30px;
+                            font-size: var(--fs-14);
+                            line-height: 21px;
+                            font-weight: var(--fw-500);
+                            color: $theme5;
+                            background-color: $theme4;
+                            &:hover{
+                                color: $white;
+                                background-color: $theme3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .development-card-group {
+        & .development-card {
+            &:not(:last-child){
+                width: 100%;
+            }
+            & .development-card-header {
+                padding: 20px 20px 20px 143px;
+                height: auto;
+                & .icon {
+                    left: 20px;
+                }
+                .title {
+                    padding-left: 20px;
+                }
+            }
+            & .development-card-body {
+                height: auto;
+            }
+        }
+    }
+}
+@media screen and (max-width: 575.98px) {
+    .development-card-group{
+        & .development-card {
+            & .development-card-header {
+                padding: 15px 15px 15px 80px;
+                &::before, &::after{
+                    width: 80px;
+                }
+                & .icon {
+                    width: 40px;
+                    height: 40px;
+                }
+                .title {
+                    padding-left: 15px;
+                }
+            }
+            & .development-card-body {
+                padding: 20px 15px;
+                & .categories-item {
+                    &:not(:last-child){
+                        padding-bottom: 15px;
+                        margin-bottom: 15px;
+                    }
+                    & .categories-title {
+                        margin-bottom: 10px;
+                    }
+                    & .categories-list {
+                        gap: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

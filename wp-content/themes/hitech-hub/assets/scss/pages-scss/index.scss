@@ -1,0 +1,291 @@
+@import '../globle-scss/main';
+@import '../component-scss/section-heading';
+@import '../component-scss/development-card';
+@import '../component-scss/featured-card';
+@import '../component-scss/cta';
+@import '../component-scss/how-to-work';
+@import '../component-scss/form';
+@import '../component-scss/latest-news';
+
+
+.hero-banner {
+    background: linear-gradient(180deg, rgba(darken($theme1, 4), 0.95) 0%, darken($theme1, 20) 100%), url(../images/banner-img/hero-banner-bg.png) no-repeat center top;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 132px;
+    &::after, &::before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+    }
+    &::before{
+        background-image: url(../images/banner-img/banner-right-shap.png);
+        background-position: right;
+        left: -30%;
+    }
+    &::after{
+        background-image: url(../images/banner-img/banner-left-shap.png);
+        background-position: left;
+        right: -30%;
+    }
+    & .inner-top-banner {
+        padding: 137px 0px 125px;
+        & .banner-content {
+            margin-bottom: 50px;
+            & .banner-title {
+                font-size: 56px;
+                line-height: 69px;
+                margin-bottom: 30px;
+            }
+            & .banner-title, & p{
+                color: $white;
+            }
+        }
+        & .searchBox {
+            max-width: 848px;
+            width: 100%;
+            background-color: $white;
+            margin: 0 auto;
+            & .form-control{
+                padding: 26px 85px 26px 25px;
+                font-size: var(--fs-16);
+                line-height: 18px;
+                border: none !important; 
+            }
+            & .search {
+                right: 4px;
+                width: 62px;
+                height: 62px;
+                background-color: $theme1;
+                border-radius: 4px;
+                transition: var(--ease-in-out);
+                &:hover{
+                    background-color: darken($theme1, 5);
+                }
+                & img {
+                    width: 29px;
+                    height: 29px;
+                    filter: invert(1);
+                }
+            }
+            & .list {
+                & li{
+                    &:first-child{
+                        border-top: 1px solid $theme1;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.content-banner {
+    position: relative;
+    margin-top: -132px;
+    &::before{
+        content: '';
+        height: calc(50% + 50px);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $white;
+    }
+    & .agencie-card {
+        padding: 40px 30px;
+        box-shadow: 10px 10px 35px 0px rgba($black, 0.05);
+        position: relative;
+        margin-bottom: 100px;
+        background-color: $white;
+        & .title {
+            margin-bottom: 40px;
+        }
+        & .agencies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            background-color: $white;
+            & .agencies-item {
+                gap: 30px;
+                display: flex;
+                align-items: center;
+                & .icon {
+                    width: 64px;
+                    height: 68px;
+                    flex: 0 0 auto;
+                }
+                & .agencies-details {
+                    & .agencies-title {
+                        font-size: var(--fs-22);
+                        line-height: 32px;
+                        margin-bottom: 8px;
+                    }
+                    & p{
+                        font-size: var(--fs-16);
+                        font-weight: var(--fw-400);
+                    }
+                }
+            }
+        }
+    }
+    & p {
+        color: $black;
+        margin: 0px;
+    }
+}
+
+.development-section {
+    padding-top: 0px;
+}
+
+// ------ Resposnsive--------
+@media screen and (max-width: 1200px) {
+    .hero-banner {
+        & .inner-top-banner {
+            padding: 100px 0px;
+        }
+    }
+    .content-banner {
+        &::before{
+            height: calc(50% + 40px);
+        }
+        & .agencie-card {
+            margin-bottom: 80px;
+            & .agencies {
+                gap: 30px;
+                & .agencies-item {
+                    gap: 20px;
+                    & .icon {
+                        width: 54px;
+                        height: 58px;
+                    }
+                    & .agencies-details {
+                        & .agencies-title {
+                            font-size: var(--fs-20);
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .hero-banner {
+        &::before{
+            left: -20%;
+        }
+        &::after{
+            right: -20%;
+        }
+        & .inner-top-banner {
+            padding: 80px 0px;
+            & .banner-content {
+                margin-bottom: 40px;
+                & .banner-title {
+                    font-size: 45px;
+                    line-height: 58px;
+                    margin-bottom: 20px;
+                }
+            }
+            .searchBox {
+                max-width: 500px;
+                & .form-control{
+                    padding: 20px 70px 20px 25px;
+                }
+                & .search {
+                    width: 50px;
+                    height: 50px;
+                    & img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .content-banner {
+        & .agencie-card {
+            & .agencies {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .hero-banner {
+        & .inner-top-banner {
+            padding: 60px 0px;
+            & .banner-content {
+                & .banner-title {
+                    font-size: 42px;
+                    line-height: 50px;
+                }
+            }
+            .searchBox {
+                max-width: calc(500px - 100px);
+                & .form-control{
+                    padding: 16px 70px 16px 20px;
+                }
+                & .search {
+                    width: 42px;
+                    height: 42px;
+                    & img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .content-banner {
+        &::before{
+            height: calc(50% + 30px);
+        }
+        & .agencie-card {
+            padding: 30px 20px;
+            margin-bottom: 60px;
+            & .title {
+                margin-bottom: 30px;
+            }
+            & .agencies {
+                grid-template-columns: repeat(1, 1fr);
+                & .agencies-item {
+                    gap: 15px;
+                    align-items: start;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 575.98px) {
+    .hero-banner {
+        & .inner-top-banner {
+            & .banner-content {
+                margin-bottom: 30px;
+                & .banner-title {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+            .searchBox {
+                & .form-control{
+                    padding: 16px 70px 16px 20px;
+                }
+                & .search {
+                    width: 42px;
+                    height: 42px;
+                    & img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
