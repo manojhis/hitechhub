@@ -49,7 +49,7 @@ $current_url = add_query_arg(array(), home_url($wp->request));
                     if($query->have_posts()) :
                         while($query->have_posts()) : $query->the_post();
                             $postID         =   get_the_ID();
-                            $post_thumb_id  =   get_post_thumbnail_id($post_id);
+                            $post_thumb_id  =   get_post_thumbnail_id($postID);
                             $attachment_url =   wp_get_attachment_image_url($post_thumb_id) != '' ? wp_get_attachment_image_url($post_thumb_id, 'full') : get_stylesheet_directory_uri()."/assets/images/default_blog.jpg" ;
                             ?>
                             <div class="blog-item">

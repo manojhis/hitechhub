@@ -30,7 +30,7 @@ function recommended_articles(){ ?>
                         if($query->have_posts()) :
                             while($query->have_posts()) : $query->the_post();
                                 $postID         =   get_the_ID();
-                                $post_thumb_id  =   get_post_thumbnail_id($post_id);
+                                $post_thumb_id  =   get_post_thumbnail_id($postID);
                                 $attachment_url =   wp_get_attachment_image_url($post_thumb_id);
 						        $mycontent = get_the_content();
 						        $word = str_word_count(strip_tags($mycontent));
@@ -39,7 +39,7 @@ function recommended_articles(){ ?>
         						$total_time = $m . '.' . ($m == 1 ? '' : '') .$s. ' Min' . ($s == 1 ? '' : '');
                             ?>
                                 <div class="news-card">
-                                    <div class="sub-title"><?php echo display_read_time($post_id);?> Read</div>
+                                    <div class="sub-title"><?php echo display_read_time($postID);?> Read</div>
                                     <h3 class="news-title"><a href="<?= the_permalink() ?>"><?= get_the_title() ?></a></h3>
                                     <a href="<?= the_permalink() ?>" class="vist-btn">Read More 
                                         <span>

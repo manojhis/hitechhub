@@ -29,12 +29,12 @@ if (!class_exists('ITFirmsRewriteTaxonomy', false)) {
             $tax_name = 'industries'; 
 	
            
-            if( $query['attachment'] ) :
+            if( isset($query['attachment']) && $query['attachment'] ) :
                 $include_children = true;
                 $name = $query['attachment'];
             else:
                 $include_children = false;
-                $name = $query['name'];
+                $name = (isset($query['name'])) ? $query['name'] : '';
             endif;
             
             
@@ -106,12 +106,12 @@ if (!class_exists('ITFirmsRewriteTaxonomy', false)) {
             $tax_name = 'location'; 
     
            
-            if( $query['attachment'] ) :
+            if( isset($query['attachment']) && $query['attachment'] ) :
                 $include_children = true;
                 $name = $query['attachment'];
             else:
                 $include_children = false;
-                $name = $query['name'];
+                $name = isset($query['name']) ? $query['name'] : '';
             endif;
             
             
@@ -183,12 +183,12 @@ if (!class_exists('ITFirmsRewriteTaxonomy', false)) {
             $tax_name = 'services'; 
     
            
-            if( $query['attachment'] ) :
+            if( isset($query['attachment']) && $query['attachment'] ) :
                 $include_children = true;
                 $name = $query['attachment'];
             else:
                 $include_children = false;
-                $name = $query['name'];
+                $name = isset($query['name']) ? $query['name'] : '';
             endif;
             
             
