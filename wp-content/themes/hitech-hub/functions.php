@@ -217,7 +217,7 @@ function Insert_Company_Records(){
     $ip_address             	=   get_ipinfo(); 
     $datetimenow            	=   current_time('Y-m-d H:i:s');
     $data                   	=   json_decode($ip_address, true);
-    $visitorTimezone        	=   $data['timezone'];
+    $visitorTimezone        	=   (!empty($data['timezone'])) ? $data['timezone'] : 'UTC';
     $dateTime               	=   new DateTime('now', new DateTimeZone($visitorTimezone));
     $visiter_time           	=   $dateTime->format('Y-m-d H:i:s');
 

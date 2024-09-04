@@ -36,7 +36,7 @@ if(!class_exists('ITFirmsAjaxHandler', false)){
             $ip_address             =   get_ipinfo(); 
             $datetimenow            =   current_time('Y-m-d H:i:s');
             $data                   =   json_decode($ip_address, true);
-            $visitorTimezone        =   $data['timezone'];
+            $visitorTimezone        =   (!empty($data['timezone'])) ? $data['timezone'] : 'UTC';
             $dateTime               =   new DateTime('now', new DateTimeZone($visitorTimezone));
             $visiter_time           =   $dateTime->format('Y-m-d H:i:s');
 
@@ -75,6 +75,7 @@ if(!class_exists('ITFirmsAjaxHandler', false)){
                         'description'   =>  $contact_message,
                         'ip_info'       =>  $ip_address,
                         'page_url'      =>  $current_url,
+                        'wd_status'     =>  '1',
                         'create_date'   =>  $datetimenow,
                         'visiter_time'  =>  $visiter_time,
                         'time'          =>  $contact_current_time,
@@ -138,7 +139,7 @@ if(!class_exists('ITFirmsAjaxHandler', false)){
             $ip_address             =   get_ipinfo(); 
             $datetimenow            =   current_time('Y-m-d H:i:s');
             $data                   =   json_decode($ip_address, true);
-            $visitorTimezone        =   $data['timezone'];
+            $visitorTimezone        =   (!empty($data['timezone'])) ? $data['timezone'] : 'UTC';
             $dateTime               =   new DateTime('now', new DateTimeZone($visitorTimezone));
             $visiter_time           =   $dateTime->format('Y-m-d H:i:s');
             $return                 =   [];
@@ -177,6 +178,7 @@ if(!class_exists('ITFirmsAjaxHandler', false)){
                         'description'   =>  $p_message,
                         'ip_info'       =>  $ip_address,
                         'page_url'      =>  $current_url,
+                        'wd_status'     =>  '1',
                         'created'       =>  $datetimenow,
                         'visiter_time'  =>  $visiter_time,
                         'time'          =>  $contact_current_time,

@@ -4,3 +4,6 @@ wp-config.php
 #ignore upload and cache
 wp-content/uploads/
 wp-content/cache/
+
+# Ignore debug log
+wp-content/debug.log

@@ -45,10 +45,11 @@ if(!class_exists('ITFirmsBackend', false)){
 
         //COMPANIES
         public static function itf_register_admin_menus_cb(){
-            $current_user = wp_get_current_user();
-            $last_login_time = get_user_meta ( $current_user->ID, 'last_login', true );
-            $flag = self::get_flag_count( 'companies_list' );
-            $label = $flag > 0 ? 'Leads <span class="awaiting-mod leads-bubble">'.$flag.'</span>' : 'Leads';
+            $current_user 			= wp_get_current_user();
+            $last_login_time 		= get_user_meta ( $current_user->ID, 'last_login', true );
+
+            $flag 		= 	self::get_flag_count( 'companies_list', 'proposals_list', 'contact_list' );
+            $label 		= 	(!empty($flag > 0) && $flag > 0) ? 'Leads <span class="awaiting-mod leads-bubble">'.$flag.'</span>' : 'Leads';
             add_menu_page(
                 'Leads',
                 $label,
@@ -58,6 +59,17 @@ if(!class_exists('ITFirmsBackend', false)){
                 'dashicons-businessperson', 
                 2
             );
+
+			$leads_flag 		= 	self::get_flag_count_particular_list( 'companies_list' );
+            $leads_label 		= 	(!empty($leads_flag) && $leads_flag > 0) ? 'Leads <span class="awaiting-mod leads-bubble">'.$leads_flag.'</span>' : 'Leads';
+			add_submenu_page(
+				'leads-admin-page',
+				'Leads',  
+				$leads_label,  
+				'manage_options',
+				'leads-admin-page', 
+				[__CLASS__, 'companies_admin_page_cb']
+			);
 
             // Add Companies submenu
             // add_submenu_page(
@@ -70,20 +82,24 @@ if(!class_exists('ITFirmsBackend', false)){
             // );
 
             // Add Contact List submenu
+			$contact_flag 		= 	self::get_flag_count_particular_list( 'contact_list' );
+            $contact_label 		= 	(!empty($contact_flag > 0) && $contact_flag > 0) ? 'Form Submissions <span class="awaiting-mod leads-bubble">'.$contact_flag.'</span>' : 'Form Submissions';
             add_submenu_page(
                 'leads-admin-page',    
                 'Form Submissions',        
-                'Form Submissions',        
+                $contact_label,        
                 'manage_options',      
                 'contact-form-submissions', 
                 [__CLASS__, 'display_contact_form_submissions_page']
             );
 
             // Add Contact List submenu
+			$p_flag 	= 	self::get_flag_count_particular_list( 'proposals_list' );
+            $p_label 	= 	(!empty($p_flag > 0 ) && $p_flag > 0 ) ? 'Proposals <span class="awaiting-mod leads-bubble">'.$p_flag.'</span>' : 'Proposals';
             add_submenu_page(
                 'leads-admin-page',    
                 'Proposals',        
-                'Proposals',        
+                $p_label,        
                 'manage_options',      
                 'proposals-form-submissions', 
                 [__CLASS__, 'display_proposals_form_submissions_page']
@@ -234,6 +250,7 @@ if(!class_exists('ITFirmsBackend', false)){
         
         public static function display_contact_form_submissions_page(){
             global $wpdb;
+			self::reset_flag_count( 'contact_list' );
             $submissions    =   self::get_contact_form_submissions();
 
             echo '<div class="wrap">';
@@ -500,7 +517,7 @@ if(!class_exists('ITFirmsBackend', false)){
         //proposals
         public static function display_proposals_form_submissions_page(){
             global $wpdb;
-            
+            self::reset_flag_count( 'proposals_list' );
             $submissions    =   self::get_proposals_list_submissions();
 
             echo '<div class="wrap">';
@@ -605,7 +622,22 @@ if(!class_exists('ITFirmsBackend', false)){
             return $results;
         }
 
-        public static function get_flag_count( $tableName ){
+        public static function get_flag_count( $t1, $t2, $t3 ){
+            global $wpdb;
+            $table_name1 	= 	$wpdb->prefix.$t1;
+			$table_name2 	= 	$wpdb->prefix.$t2;
+			$table_name3 	= 	$wpdb->prefix.$t3;
+            $flag_count 	= 	$wpdb->get_var("
+				SELECT 
+					(SELECT COUNT(*) FROM $table_name1 WHERE wd_status = 1) +
+					(SELECT COUNT(*) FROM $table_name2 WHERE wd_status = 1) +
+					(SELECT COUNT(*) FROM $table_name3 WHERE wd_status = 1) 
+				AS total_count
+			");
+            return $flag_count;
+        }
+
+		public static function get_flag_count_particular_list( $tableName ){
             global $wpdb;
             $table_name = $wpdb->prefix .''. $tableName;
             $flag_count = $wpdb->get_var("SELECT COUNT(*) FROM $table_name WHERE wd_status = 1"); 
@@ -614,7 +646,7 @@ if(!class_exists('ITFirmsBackend', false)){
 
         public static function reset_flag_count( $tableName ) {
             global $wpdb;
-            $table_name = $wpdb->prefix .''. $tableName ;
+            $table_name = $wpdb->prefix.$tableName ;
             $wpdb->update($table_name, array('wd_status' => 0), array('wd_status' => 1));
         }
 		
