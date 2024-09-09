@@ -337,7 +337,12 @@ $postsQuery             =   new WP_Query($post_args);
                     <?php
                     wp_reset_postdata();
 				else :
-					get_template_part( 'template-parts/content', 'none' );
+					// get_template_part( 'template-parts/content', 'none' );
+                    ?>
+                    <header class="page-header">
+                        <h1 class="page-title">No relevant information found.</h1>
+                    </header>
+                    <?php
 				endif;
 				?>
             </div>

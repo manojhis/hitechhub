@@ -9054,3 +9054,8 @@ Stack trace:
 [13-Jul-2024 09:42:07 UTC] PHP Warning:  Undefined variable $paged in /home/hitechhub/public_html/wp-content/themes/it-firms/inc/shortcode-functions.php on line 22
 [13-Jul-2024 09:44:18 UTC] PHP Warning:  Undefined variable $paged in /home/hitechhub/public_html/wp-content/themes/it-firms/inc/shortcode-functions.php on line 22
 [13-Jul-2024 09:44:18 UTC] PHP Warning:  Undefined variable $paged in /home/hitechhub/public_html/wp-content/themes/it-firms/inc/shortcode-functions.php on line 22
+[09-Sep-2024 11:51:59 UTC] PHP Warning:  Undefined array key "field_667c04ea34330" in C:\xampp\htdocs\hitechhub\wp-content\themes\hitech-hub\functions.php on line 413
+[09-Sep-2024 11:51:59 UTC] PHP Warning:  Undefined array key "field_667c04fd34331" in C:\xampp\htdocs\hitechhub\wp-content\themes\hitech-hub\functions.php on line 414
+[09-Sep-2024 11:51:59 UTC] PHP Warning:  Undefined array key "field_667bf4863d122" in C:\xampp\htdocs\hitechhub\wp-content\themes\hitech-hub\functions.php on line 415
+[09-Sep-2024 12:04:15 UTC] PHP Warning:  Undefined variable $post_id in C:\xampp\htdocs\hitechhub\wp-content\themes\hitech-hub\taxonomy-blog-category.php on line 40
+[09-Sep-2024 12:04:24 UTC] PHP Warning:  Undefined variable $post_id in C:\xampp\htdocs\hitechhub\wp-content\themes\hitech-hub\taxonomy-blog-category.php on line 40

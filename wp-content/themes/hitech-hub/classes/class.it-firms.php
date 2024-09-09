@@ -486,7 +486,7 @@ if(!class_exists('ITFirms', false)){
 				wp_enqueue_style('hightechhub-company-list-page-min-css', IT_HIPL_THEME_DIR . '/assets/css/company-list-page.min.css', array(), $version, 'all');
 			}
 			
-			if(is_category('blog-category')){
+			if(is_tax('blog-category')){
 				wp_enqueue_style('hightechhub-cat-blog-min-css', IT_HIPL_THEME_DIR . '/assets/css/blog.min.css', array(), $version, 'all');
 			}
 			

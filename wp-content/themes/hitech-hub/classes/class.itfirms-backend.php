@@ -41,6 +41,9 @@ if(!class_exists('ITFirmsBackend', false)){
 			//Edit Proposal Entry
 			add_action('wp_ajax_hth_edit_proposal_entry_process', [__CLASS__, 'hth_edit_proposal_entry_process_cb']);
 			add_action('wp_ajax_nopriv_hth_edit_proposal_entry_process', [__CLASS__, 'hth_edit_proposal_entry_process_cb']);
+
+			add_action('init', [__CLASS__, 'create_agencies_manager_role']);
+			add_action('admin_init', [__CLASS__, 'add_agency_manager_caps']);
         }
 
         //COMPANIES
@@ -1367,6 +1370,38 @@ if(!class_exists('ITFirmsBackend', false)){
 			}
 			echo json_encode($return);
 			exit();
+		}
+
+		public static function create_agencies_manager_role(){
+			add_role(
+				'agencies_manager',
+				'Agencies Manager',
+				[
+					'read' 						=> 	true, 
+					'edit_agencies' 			=> 	true,  
+					'edit_others_agencies' 		=> 	true,  
+					'publish_agencies' 			=> 	true, 
+					'read_agency' 				=> 	true,  
+					'read_private_agencies' 	=> 	true,  
+				]
+			);
+		}
+
+		public static function add_agency_manager_caps(){
+			$role = get_role('agencies_manager');
+			// Add specific capabilities for agency post type
+			$caps = [
+				'edit_agency',
+				'read_agency',
+				'edit_agencies',
+				'edit_others_agencies',
+				'publish_agencies',
+				'read_private_agencies',
+			];
+		
+			foreach($caps as $cap){
+				$role->add_cap($cap);
+			}
 		}
     }
 
