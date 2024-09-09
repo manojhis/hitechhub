@@ -6,6 +6,13 @@
     border-bottom: 1px solid darken($theme4, 12.5);
     position: relative;
     z-index: 100;
+    &.is-sticky {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+    }
     &>div{
         position: relative;
     }

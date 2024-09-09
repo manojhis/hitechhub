@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}, 15000); 
 });*/
 
-const secheader = document.querySelector(".sec_top_header");
+const secheader = document.querySelector(".site-header .navbar");
 const toggleClass = "is-sticky";
 
 window.addEventListener("scroll", () => {
@@ -161,7 +161,23 @@ jQuery(document).ready(function($) {
 // });
 // 
 // 
+jQuery(document).ready(($) => {
+    const backToTop = $('#backToTop');
+    const amountScrolled = 300;
 
+    $(window).scroll(() => {
+        $(window).scrollTop() >= amountScrolled ?
+        backToTop.fadeIn('fast') :
+        backToTop.fadeOut('fast');
+    });
+
+    backToTop.click(() => {
+        $('body, html').animate({
+        scrollTop: 0 },
+        600);
+        return false;
+    });
+});
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function(){
       function addReadMore(charLimit, readMoreText, readLessText, selector) {

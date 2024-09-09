@@ -24,7 +24,7 @@ div#ajax-company-list-section .loader img.hitech-hub-loader {
 	        <div class="col-lg-12 col-sm-12 col-12">
 	        	<div class="sec_top_text">
 		        	<div class="sec_top_tilte"><?= ucfirst(get_the_title()) ?></div>
-		        	<a href="#" target="_blank" class="sec_top_link">
+		        	<a href="https://hitechhub.co/find-an-agency" target="_blank" class="sec_top_link">
 				        Need Help Selecting a Company?
 				    </a>
 				</div>
@@ -315,6 +315,18 @@ jQuery(document).ready(function(){
 			}
 		});
 	}
+
+	const secheader = document.querySelector(".sec_top_header");
+	const toggleClass = "is-sticky";
+
+	window.addEventListener("scroll", () => {
+	const currentScroll = window.pageYOffset;
+	if (currentScroll > 150) {
+		secheader.classList.add(toggleClass);
+	} else {
+		secheader.classList.remove(toggleClass);
+	}
+	});
 });
 
 </script>

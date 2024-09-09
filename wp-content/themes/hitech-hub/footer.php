@@ -9,6 +9,8 @@
  * @package IT_Firms
  */
 ?>
+
+
     <!--  Footer Section Start -->
     <footer class="footer">
         <div class="container">
@@ -63,7 +65,12 @@
         </div>
     </footer>
     <!--  Footer Section End -->
-
+<a href="javascript:void(0)" id="backToTop" class="back-to-top" style="display:none;">
+  <svg class="icon__arrow-up" viewBox="0 0 24 24">
+    <title>Back to top</title>
+    <path d="M18.71,11.71a1,1,0,0,1-1.42,0L13,7.41V19a1,1,0,0,1-2,0V7.41l-4.29,4.3a1,1,0,0,1-1.42-1.42l6-6a1,1,0,0,1,1.42,0l6,6A1,1,0,0,1,18.71,11.71Z"/>
+  </svg>
+</a>
     <!-- Modal -->
     <div class="modal fade project-popup" id="aboutproject">
         <div class="modal-dialog modal-dialog-centered">

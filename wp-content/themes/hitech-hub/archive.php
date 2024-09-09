@@ -162,7 +162,11 @@ if(!empty($post_args)){
 }
 $postsQuery             =   new WP_Query($post_args);
 ?>  
-
+<style>
+    .term-top-big-commerce-development-firms .blog-section section.no-results.not-found form.search-form {
+        display: none;
+    }
+</style>
 
     <!-- ---------- Banner Section Start --------- -->
     <section class="banner-section">
